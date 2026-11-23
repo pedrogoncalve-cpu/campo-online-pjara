@@ -115,6 +115,10 @@ footer .disp{color:var(--gold);font-size:24px;margin-bottom:6px}
 @keyframes sobe{0%{transform:translateY(0);opacity:.9}100%{transform:translateY(-40px);opacity:0}}
 .drop{animation:cai var(--d,1s) linear infinite}.bub{animation:sobe var(--d,2s) linear infinite}
 @media(prefers-reduced-motion:reduce){.drop,.bub,.ticker span{animation:none}.card{transition:none}}
+.inst{display:none;align-items:center;gap:8px;font:inherit;font-weight:700;font-size:16px;min-height:48px;padding:0 18px;margin-top:14px;border-radius:6px;border:3px solid #16100c;background:var(--gold);color:#16100c;cursor:pointer;box-shadow:4px 4px 0 #16100c}
+.inst.on{display:inline-flex}
+.ajuda{display:none;margin-top:12px;background:#fffaf0;color:#16100c;border:3px solid #16100c;border-radius:8px;padding:10px 14px;font-size:15px;max-width:34em}
+.ajuda.on{display:block}
 </style>
 </head>
 <body>
@@ -332,10 +336,22 @@ const fv=(c,x)=>c.opts?c.opts.find(o=>o[0]==x)[1]:c.u==='R$'?'R$ '+br(x,dec(c.s)
 const foot=`<footer><div class="wrap"><div class="disp">★ Campo Online PJARA ★</div>Educação do campo, no campo e para o campo. Simulações de Ciências da Natureza e Matemática para o Enem. Os modelos são simplificados para fins didáticos.</div></footer>`;
 const S={};SIMS.forEach(s=>{S[s.id]={seed:7};s.c.forEach(c=>S[s.id][c.id]=c.v)});
 
+
+let promptEv=null;const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();promptEv=e});
+window.addEventListener('appinstalled',()=>{promptEv=null;const b=document.getElementById('inst');if(b)b.classList.remove('on');const a=document.getElementById('ajuda');if(a){a.classList.add('on');a.innerHTML='<b>App instalado!</b> Procure o ícone “Campo Online” na tela inicial ou na gaveta de apps.'}});
+document.addEventListener('click',async e=>{if(!e.target.closest('#inst'))return;const a=document.getElementById('ajuda');
+ if(promptEv){promptEv.prompt();try{await promptEv.userChoice}catch(x){}promptEv=null;return}
+ const ua=navigator.userAgent,ios=/iPhone|iPad|iPod/.test(ua),inApp=/Instagram|FBAN|FBAV|WhatsApp|Line\/|; wv\)/.test(ua);
+ a.classList.add('on');
+ a.innerHTML=inApp?'<b>Você abriu o site dentro de outro app</b> (WhatsApp, Instagram...). Por aqui não dá para instalar. Toque nos três pontinhos e escolha <b>“Abrir no Chrome”</b> ou <b>“Abrir no navegador”</b>, e aperte este botão de novo.'
+ :ios?'<b>No iPhone:</b> abra o site no <b>Safari</b>, toque no botão de compartilhar (□↑) e escolha <b>“Adicionar à Tela de Início”</b>.'
+ :'<b>Quase lá!</b> Toque nos três pontinhos (⋮) do Chrome e escolha <b>“Instalar app”</b> ou <b>“Adicionar à tela inicial”</b>. Se não aparecer, recarregue a página e espere alguns segundos. Em celulares Xiaomi, libere em Configurações → Apps → Chrome → Outras permissões → <b>“Atalhos da tela inicial”</b>.';
+});
 function home(){
  const list=SIMS.filter(s=>filtro==='Todas'||s.d===filtro),n=done.size;
  const fala=n===0?'Oi! Eu sou o Campina, galo-de-campina do sertão. Bora aprender ciência com a nossa roça?':n<SIMS.length?`Você já acertou ${n} questões. Bora pra próxima, companheiro!`:'Você acertou tudo! O campo tem ciência e tem gente sabida!';
- app.innerHTML=`<header class="hero"><div class="wrap">${LOGO}<div><h1 class="brand disp">Campo Online <span>PJARA</span></h1><p class="tag">Educação do campo, no campo e para o campo. 20 experimentos de Ciências da Natureza e Matemática que caem no Enem.</p></div><div class="masc"><div class="bubble">${fala}</div>${MASC}</div></div></header>
+ app.innerHTML=`<header class="hero"><div class="wrap">${LOGO}<div><h1 class="brand disp">Campo Online <span>PJARA</span></h1><p class="tag">Educação do campo, no campo e para o campo. 20 experimentos de Ciências da Natureza e Matemática que caem no Enem.</p><button class="inst${standalone?'':' on'}" id="inst">⬇ Instalar app</button><div class="ajuda" id="ajuda"></div></div><div class="masc"><div class="bubble">${fala}</div>${MASC}</div></div></header>
  <div class="ticker" aria-hidden="true"><span>★ Física ★ Química ★ Biologia ★ Matemática ★ Ciência que nasce da roça ★ Enem ★ Caixa d’água ★ Cisterna ★ Roçado ★ Feira ★ Biodigestor ★ Queijo coalho ★ Cajueiro ★ Física ★ Química ★ Biologia ★ Matemática ★ Ciência que nasce da roça ★ Enem ★ Caixa d’água ★ Cisterna ★ Roçado ★ Feira ★ Biodigestor ★ Queijo coalho ★ Cajueiro </span></div>
  <main class="wrap"><div class="bar" role="group" aria-label="Filtrar por disciplina">${['Todas','Física','Química','Biologia','Matemática'].map(f=>`<button class="f ${DC[f]||''}" data-f="${f}" aria-pressed="${f===filtro}">${f}</button>`).join('')}<span class="prog">★ ${n} de ${SIMS.length} acertadas</span></div>
  <div class="grid">${list.map(s=>{const v=S[s.id],r=s.run(v);return `<a class="card ${DC[s.d]}" href="#${s.id}"><div class="thumb">${wrapS(s,s.draw(v,r)).replace(/class="(drop|bub)"/g,'')}</div><span class="ico">${ICO(s.id)}</span>${done.has(s.id)?'<span class="feito">★ Feita</span>':''}<div class="cb"><span class="chip">${s.d}</span><h3 class="disp">${s.t}</h3><p>Enem: ${s.enem}</p></div></a>`}).join('')}</div></main>`+foot;
