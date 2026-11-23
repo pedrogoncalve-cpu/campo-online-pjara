@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#c8102e">
 <meta name="description" content="Simulações de Ciências da Natureza e Matemática para o Enem, ligadas à educação do campo.">
-<link rel="manifest" href="manifest.webmanifest">
+<link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -390,7 +390,7 @@ app.addEventListener('click',e=>{
 });
 function route(){const s=cur();s?page(s):home();window.scrollTo(0,0)}
 window.addEventListener('hashchange',route);route();
-if('serviceWorker' in navigator&&location.protocol==='https:'){try{navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}}
+if('serviceWorker' in navigator&&location.protocol==='https:'){window.addEventListener('load',()=>{try{navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{})}catch(e){}})}
 }
 </script>
 </body>
