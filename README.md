@@ -2,7 +2,7 @@
 
 **Educação do campo, no campo e para o campo.**
 
-20 simulações interativas de Física, Química, Biologia e Matemática que caem no Enem, ligadas à vida no campo: caixa d'água, cisterna, roçado, feira, biodigestor, queijo coalho, cajueiro e muito mais.
+35 simulações interativas de Física, Química, Biologia e Matemática que caem no Enem, ligadas à vida no campo: caixa d'água, cisterna, roçado, feira, biodigestor, queijo coalho, cajueiro e muito mais.
 
 Cada experimento tem uma cena que reage aos controles, as contas passo a passo, um resumo do conteúdo, uma dica do mascote Campina e uma questão no estilo Enem com correção.
 
@@ -25,6 +25,21 @@ Cada experimento tem uma cena que reage aos controles, as contas passo a passo, 
 | Biologia | Bezerro com ou sem chifre? | 1ª Lei de Mendel |
 | Biologia | Joaninha contra pulgão | Predação e controle biológico |
 | Biologia | Fotossíntese e os fatores limitantes | Fotossíntese |
+| Física | A conta de luz do sítio | Potência e consumo de energia |
+| Física | Fogão solar | Espelhos côncavos e foco |
+| Física | Freando a moto na estrada de terra | Distância de frenagem |
+| Física | A que distância está o raio? | Velocidade do som |
+| Física | A canoa no açude | Empuxo |
+| Química | Por que o leite azeda mais rápido no calor? | Cinética química |
+| Química | A ferrugem no arame da cerca | Oxirredução e corrosão |
+| Química | Dessalinizador solar | Destilação |
+| Química | Lenha, carvão, gás ou biogás? | Termoquímica |
+| Química | Repolho roxo: o detetive do pH | Indicadores ácido-base |
+| Biologia | A energia na cadeia da caatinga | Fluxo de energia |
+| Biologia | A lagarta que o veneno não mata mais | Seleção natural |
+| Biologia | Mosquito da dengue no quintal | Ciclo do Aedes aegypti |
+| Biologia | A galinha azul do terreiro | Herança sem dominância |
+| Biologia | Compostagem: lixo que vira adubo | Decompositores |
 | Matemática | Cercando o roçado | Área e perímetro |
 | Matemática | Quantos dias dura a água? | Grandezas inversamente proporcionais |
 | Matemática | Feira ou atravessador? | Porcentagem |
