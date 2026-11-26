@@ -4,7 +4,7 @@
 
 43 simulações interativas de Física, Química, Biologia e Matemática que caem no Enem, ligadas à vida no campo: caixa d'água, cisterna, roçado, feira, biodigestor, queijo coalho, cajueiro e muito mais.
 
-Cada experimento tem uma cena que reage aos controles, as contas passo a passo, um resumo do conteúdo, uma dica do mascote Campina e uma questão no estilo Enem com correção.
+Cada experimento tem uma cena que reage aos controles, as contas passo a passo, um resumo do conteúdo, uma dica do mascote Campina e uma 5 questões no estilo Enem com correção.
 
 ## Como usar
 
