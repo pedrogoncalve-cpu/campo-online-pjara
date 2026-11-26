@@ -1,4 +1,4 @@
-const CACHE = 'campo-online-v6';
+const CACHE = 'campo-online-v7';
 const FILES = ['./', './index.html', './manifest.json', './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png', './icons/apple-touch-icon.png'];
 
 self.addEventListener('install', e => {

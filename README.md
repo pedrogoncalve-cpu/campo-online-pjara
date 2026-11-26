@@ -2,7 +2,7 @@
 
 **Educação do campo, no campo e para o campo.**
 
-35 simulações interativas de Física, Química, Biologia e Matemática que caem no Enem, ligadas à vida no campo: caixa d'água, cisterna, roçado, feira, biodigestor, queijo coalho, cajueiro e muito mais.
+43 simulações interativas de Física, Química, Biologia e Matemática que caem no Enem, ligadas à vida no campo: caixa d'água, cisterna, roçado, feira, biodigestor, queijo coalho, cajueiro e muito mais.
 
 Cada experimento tem uma cena que reage aos controles, as contas passo a passo, um resumo do conteúdo, uma dica do mascote Campina e uma questão no estilo Enem com correção.
 
@@ -19,6 +19,14 @@ Cada experimento tem uma cena que reage aos controles, as contas passo a passo, 
 | Física | Bomba solar enchendo a cisterna | Energia, potência e rendimento |
 | Física | Por que a água do pote é fresquinha? | Calorimetria e calor latente |
 | Física | Alavanca para tirar pedra do roçado | Momento de uma força |
+| Física | Ondas na água do açude | Equação fundamental (v = λ·f) |
+| Física | O rádio do sítio e as ondas no ar | Ondas eletromagnéticas |
+| Física | A corda da viola | Ondas estacionárias em cordas |
+| Física | O eco na serra | Reflexão do som e eco |
+| Física | O carro de som da feira | Efeito Doppler |
+| Física | Pífano e berrante: o som dos tubos | Tubos sonoros |
+| Física | O barulho do trator e o ouvido | Intensidade sonora (dB) |
+| Física | O arco-íris depois da chuva | Refração e dispersão |
 | Química | Calagem: corrigindo o solo ácido | pH, ácidos, bases e neutralização |
 | Química | Biodigestor: gás de cozinha do esterco | Combustão e estequiometria |
 | Química | Água salobra e o solo que vira sal | Concentração comum |
